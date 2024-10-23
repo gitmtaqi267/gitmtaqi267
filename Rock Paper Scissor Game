@@ -1,0 +1,45 @@
+import random
+
+
+def SWG():
+    print("Welcome to Rock Paper Scissors game")
+    player1 = input("ENter YOur Name Player1: ")
+    player2 = input("ENter YOur Name Player2: ")
+    count =0
+    player1_score = 0
+    player2_score = 0
+
+
+    valid_choices = ["rock", "paper", "scissors"]
+
+    while True:
+        player1_input = input(f"{player1}, Enter Your Choice (rock, paper, scissors): ")
+        while player1_input not in valid_choices:
+            print("Invalid Choice. Please Enter rock , paper, or scissors:")
+            player1_input = input(f"{player1}, Enter Your Choice (rock, paper, scissors): ")
+
+
+        player2_input = input(f"{player2}, Enter your choice Player2")
+        while player2_input not in valid_choices:
+            print(input(f"{player2}, Enter Your Choice (rock, paper, scissors):"))
+        print(f"You chose {player1_input} and the computer chose {player2_input}.")
+
+        if player1_input == player2_input  :
+            print("It's a draw because you chose the same thing.")
+        elif (player1_input == "rock" and player2_input   == "scissors") or \
+                (player1_input == "paper" and player2_input   == "rock") or \
+                (player1_input == "scissors" and player2_input == "paper"):
+            print(f"{player1}You won!")
+            player1_score += 1
+
+        else:
+            print(f"{player2}You won!")
+            player2_score += 1
+
+        count += 1
+        # play_again = input("Do you want to play again? (yes/no): ").lower()
+        # if play_again != "yes":
+        print(f"Thanks for playing!yo play game {count} time {player1_score} {player2_score}")
+        continue
+
+SWG()
